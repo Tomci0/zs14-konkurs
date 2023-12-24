@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html lang="pl-PL" data-bs-theme="light">
+    <head>
+
+        <!-- INCLUDE HEAD -->
+        <%- include('partials/head') %>
+
+    </head>
+    <body>
+
+        <!-- INCLUDE NAVBAR -->
+
+        <%- include('partials/navbar', {
+            userData
+        }) %>
+
+        <!-- PAGE BODY -->
+
+        <div id="main" class="home-page">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-12">
+                        <div class="d-flex flex-column">
+                            <div class="home-logo justify-content-center justify-content-lg-start">
+                                <img src="images/logo-solo.png">
+                                <span>ZS14.pl</span>
+                            </div>
+                            <div class="home-text text-center text-lg-start">
+                                <span>Zgłaszanie się na spotkania konsultacyjne w naszym technikum nigdy nie było tak łatwe!</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- OFFCANVAS -->
+
+        <% if (userData) { %>
+            <%- include('partials/consultation-list', {
+                userData,
+                userConsultations
+            }) %>
+        <% } %>
+
+
+        <!-- INCLUDE FOOTER -->
+
+        <%- include('../partials/footer') %>
+
+        <!-- INCLUDE SCRIPTS -->
+        <%- include('partials/scripts', { error: messages.error, success: messages.success }) %>
+
+        <!-- OTHER SCRIPTS -->
+    </body>
+</html>

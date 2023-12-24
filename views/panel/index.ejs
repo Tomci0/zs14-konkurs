@@ -1,0 +1,491 @@
+<!DOCTYPE HTML>
+<html lang="pl-PL" data-bs-theme="light">
+    <head>
+        <%- include('partials/head.ejs') %>
+    </head>
+    <body>        
+
+        <!-- SIDEBAR INCLUDE -->
+
+        <%- include('partials/sidebar.ejs') %>
+
+        <div class="main-page">
+
+
+
+            <%- include('partials/navbar.ejs', {
+                userData
+            }) %>
+    
+            <div id="main">
+                <div class="container">
+                    <div class="row mb-5">
+                        <div class="col">
+                            <div class="page-title">
+                                <span class="title">Tworzenie i edycja konsultacji</span>
+                                <button class="add-btn" data-bs-target="#consultation-createModal" data-bs-toggle="modal" type="button"><span class="iconify icon" data-icon="uiw:plus"></span></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 mb-3">
+                            <div class="page-element">
+                                <div class="element-content p-0">
+                                    <div class="position-relative">
+                                        <div class="month-selection">
+                                            <button class="prev" type="button"><span class="iconify icon" data-icon="ic:round-arrow-circle-left"></span></button>
+                                            <div class="d-flex align-items-center justify-content-center gap-3" style="width:150px;">
+                                                <span class="month">Grudzień</span>
+                                                <span class="year">2023</span>
+                                            </div>
+                                            <button class="next" type="button"><span class="iconify icon" data-icon="ic:round-arrow-circle-right"></span></button>
+                                        </div>
+                                        <div class="dropdonw">
+                                            <div class="dropdonw">
+                                                <button class="filter-btn ms-auto" data-bs-toggle="dropdown" aria-expanded="false" type="button">
+                                                    <span class="iconify icon" data-icon="octicon:filter-16"></span>
+                                                </button>
+                                                <div class="dropdown-menu p-2" style="width:300px;">
+                                                    <div class="mb-3">Filtruj</div>
+                                                    <hr class="dropdown-divider">
+                                                    <label for="" class="form-label" style="font-size: 14px;">Nauczyciel</label>
+                                                    <select id="teachers-filter" class="form-select" aria-label="Default select example">
+                                                        <option value="all">Wszyscy</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class=" table-responsive">
+                                        <table id="calendar" class="table table-bordered mb-0">
+                                            <thead>
+                                                <tr class="table-header">
+                                                    <th scope="col" class="text-center">Poniedziałek</th>
+                                                    <th scope="col" class="text-center">Wtorek</th>
+                                                    <th scope="col" class="text-center">Środa</th>
+                                                    <th scope="col" class="text-center">Czwartek</th>
+                                                    <th scope="col" class="text-center">Piątek</th>
+                                                    <th scope="col" class="text-center">Sobota</th>
+                                                    <th scope="col" class="text-center">Niedziela</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <div class="day-month">
+                                                            <div class="day">
+                                                                <span>1</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="plate-list">
+                                                            <div class="plate green" data-bs-toggle="modal" data-bs-target="#consultation-previewModal">
+                                                                <span class="time">11:00 - 13:30</span>
+                                                                <span class="value">Jan Kowalski</span>
+                                                            </div>
+                                                            <div class="plate yellow" data-bs-toggle="modal" data-bs-target="#consultation-previewModal">
+                                                                <span class="time">11:00 - 13:30</span>
+                                                                <span class="value">Jan Kowalski</span>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="day-month">
+                                                            <div class="day">
+                                                                <span>2</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="plate-list">
+                                                            <div class="plate green" data-bs-toggle="modal" data-bs-target="#consultation-previewModal">
+                                                                <span class="time">11:00 - 13:30</span>
+                                                                <span class="value">Jan Kowalski</span>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="day-month">
+                                                            <div class="day">
+                                                                <span>3</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="plate-list">
+                                                            <div class="plate green" data-bs-toggle="modal" data-bs-target="#consultation-previewModal">
+                                                                <span class="time">11:00 - 13:30</span>
+                                                                <span class="value">Jan Kowalski</span>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="day-month">
+                                                            <div class="day">
+                                                                <span>4</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="plate-list">
+                                                            <div class="plate green" data-bs-toggle="modal" data-bs-target="#consultation-previewModal">
+                                                                <span class="time">11:00 - 13:30</span>
+                                                                <span class="value">Jan Kowalski</span>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="day-month">
+                                                            <div class="day">
+                                                                <span>5</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="plate-list">
+                                                            <div class="plate green" data-bs-toggle="modal" data-bs-target="#consultation-previewModal">
+                                                                <span class="time">11:00 - 13:30</span>
+                                                                <span class="value">Jan Kowalski</span>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="day-month">
+                                                            <div class="day">
+                                                                <span>6</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="plate-list">
+                                                            <div class="plate green" data-bs-toggle="modal" data-bs-target="#consultation-previewModal">
+                                                                <span class="time">11:00 - 13:30</span>
+                                                                <span class="value">Jan Kowalski</span>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="day-month">
+                                                            <div class="day">
+                                                                <span>7</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="plate-list">
+                                                            <div class="plate green" data-bs-toggle="modal" data-bs-target="#consultation-previewModal">
+                                                                <span class="time">11:00 - 13:30</span>
+                                                                <span class="value">Jan Kowalski</span>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+    
+                                                <tr>
+                                                    <td>
+                                                        <div class="day-month">
+                                                            <div class="day">
+                                                                <span>8</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="plate-list">
+                                                            <div class="plate green" data-bs-toggle="modal" data-bs-target="#consultation-previewModal">
+                                                                <span class="time">11:00 - 13:30</span>
+                                                                <span class="value">Jan Kowalski</span>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="day-month">
+                                                            <div class="day active">
+                                                                <span>9</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="plate-list">
+                                                            <div class="plate green" data-bs-toggle="modal" data-bs-target="#consultation-previewModal">
+                                                                <span class="time">11:00 - 13:30</span>
+                                                                <span class="value">Jan Kowalski</span>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="day-month">
+                                                            <div class="day">
+                                                                <span>10</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="plate-list">
+                                                            
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="day-month">
+                                                            <div class="day">
+                                                                <span>11</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="plate-list">
+                                                            <div class="plate green" data-bs-toggle="modal" data-bs-target="#consultation-previewModal">
+                                                                <span class="time">11:00 - 13:30</span>
+                                                                <span class="value">Jan Kowalski</span>
+                                                            </div>
+                                                            <div class="plate red" data-bs-toggle="modal" data-bs-target="#consultation-previewModal">
+                                                                <span class="time">11:00 - 13:30</span>
+                                                                <span class="value">Jan Kowalski</span>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="day-month">
+                                                            <div class="day">
+                                                                <span>12</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="plate-list">
+                                                            <div class="plate green" data-bs-toggle="modal" data-bs-target="#consultation-previewModal">
+                                                                <span class="time">11:00 - 13:30</span>
+                                                                <span class="value">Jan Kowalski</span>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="day-month">
+                                                            <div class="day">
+                                                                <span>13</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="plate-list">
+                                                            <div class="plate green" data-bs-toggle="modal" data-bs-target="#consultation-previewModal">
+                                                                <span class="time">11:00 - 13:30</span>
+                                                                <span class="value">Jan Kowalski</span>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="day-month">
+                                                            <div class="day">
+                                                                <span>14</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="plate-list">
+                                                            <div class="plate green" data-bs-toggle="modal" data-bs-target="#consultation-previewModal">
+                                                                <span class="time">11:00 - 13:30</span>
+                                                                <span class="value">Jan Kowalski</span>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FOOTER INCLUDE -->
+
+             <%- include('../partials/footer') %>
+        </div>
+
+        <div class="modal fade" id="consultation-previewModal" tabindex="-1" aria-labelledby="consultation-previewModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="consultation-previewModalLabel">Szczegóły konsultacji</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="d-flex flex-column gap-3 pe-5 ps-5">
+                            <div class="details-item">
+                                <span class="title">Przedmiot:</span>
+                                <span id="subject" class="value">Matematyka</span>
+                            </div>
+                            <div class="details-item">
+                                <span class="title">Nauczyciel:</span>
+                                <span id="teacher-name" class="value">Imię Nazwisko</span>
+                            </div>
+                            <div class="details-item">
+                                <span class="title">Godziny:</span>
+                                <span id="hours" class="value">10:00 - 11:00</span>
+                            </div>
+                            <div class="details-item">
+                                <span class="title">Data:</span>
+                                <span id="date" class="value">14.12.2023</span>
+                            </div>
+                            <div class="details-item">
+                                <span class="title">Budynek:</span>
+                                <span id="building" class="value">Budynek A</span>
+                            </div>
+                            <div class="details-item">
+                                <span class="title">Sala:</span>
+                                <span id="classroom" class="value">Sala nr 5</span>
+                            </div>
+                            <div class="details-item">
+                                <span class="title">Liczba Miejsc:</span>
+                                <span id="members-count" class="value">1/31</span>
+                            </div>
+                            <div class="details-item">
+                                <span class="title">Opis:</span>
+                                <span id="description" class="value">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</span>
+                            </div>
+                            <div class="d-flex flex-column flex-lg-row align-items-lg-center gap-2 gap-lg-3">
+                                <button data-bs-target="#consultation-enrolled-studentsModal" data-bs-toggle="modal" class="btn btn-success w-100" type="button">Członkowie</button>
+                                <button data-bs-target="#consultation-editModal" data-bs-toggle="modal" class="btn btn-secondary w-100" type="button">Edytuj</button>
+                                <button id="delete-consultation-btn" class="btn btn-danger w-100" type="button" data-bs-dismiss="modal">Usuń</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="consultation-editModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="consultation-editModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="consultation-editModalLabel">Edycja konsultacji</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="d-flex flex-column gap-3 pe-5 ps-5">
+                            <div>
+                                <label for="subject-inp" class="form-label">Przedmiot</label>
+                                <input type="text" class="form-control" id="subject-inp" placeholder="Nazwa przedmiotu">
+                            </div>
+                            <div>
+                                <label for="hours-sel" class="form-label">Godziny</label>
+                                <select id="hours-sel" class="form-select" aria-label="Default select example">
+                                    <option value="none" selected>Wybierz Godzinę</option>
+                                    <option value="0">(0) 7:10 - 7:55</option>
+                                    <option value="1">(1) 8:00 - 8:45</option>
+                                    <option value="2">(2) 8:50 - 9:35</option>
+                                    <option value="3">(3) 9:40 - 10:25</option>
+                                    <option value="4">(4) 10:35 - 11:20</option>
+                                    <option value="5">(5) 11:30 - 12:15</option>
+                                    <option value="6">(6) 12:35 - 13:20</option>
+                                    <option value="7">(7) 13:35 - 14:20</option>
+                                    <option value="8">(8) 14:25 - 15:10</option>
+                                    <option value="9">(9) 15:15 - 16:00</option>
+                                    <option value="10">(10) 16:05 - 16:50</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="date-inp" class="form-label">Data</label>
+                                <input type="date" class="form-control" id="date-inp" placeholder="">
+                            </div>
+                            <div>
+                                <label for="building-sel" class="form-label">Budynek</label>
+                                <select id="building-sel" class="form-select" aria-label="Default select example">
+                                    <option value="none" selected>Wybierz Budynek</option>
+                                    <option value="1">ul. Szanajcy 5</option>
+                                    <option value="2">ul. Szanajcy 17/19</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="classroom-inp" class="form-label">Sala</label>
+                                <input type="text" class="form-control" id="classroom-inp" placeholder="">
+                            </div>
+                            <div>
+                                <label for="max-members-inp" class="form-label">Maksymalna Ilość Członków</label>
+                                <input type="number" class="form-control" id="max-members-inp" placeholder="" min="1">
+                            </div>
+                            <div>
+                                <label for="description-inp" class="form-label">Opis</label>
+                                <textarea class="form-control" id="description-inp" rows="3"></textarea>
+                            </div>
+                            <div class="d-flex flex-column flex-lg-row align-items-lg-center gap-2 gap-lg-5">
+                                <button id="edit-btn" class="btn btn-success w-100" type="button">Zapisz zmiany</button>
+                                <button class="btn btn-danger w-100" type="button" data-bs-dismiss="modal">Anuluj</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="consultation-createModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="consultation-createModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="consultation-createModalLabel">Tworzenie konsultacji</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="d-flex flex-column gap-3 pe-5 ps-5">
+                            <div>
+                                <label for="subject-name-inp" class="form-label">Przedmiot</label>
+                                <input type="text" class="form-control" id="subject-name-inp" placeholder="Nazwa przedmiotu">
+                            </div>
+                            <div>
+                                <label for="hours-sel" class="form-label">Godziny</label>
+                                <select id="hours-sel" class="form-select" aria-label="Default select example">
+                                    <option value="none" selected>Wybierz Godzinę</option>
+                                    <option value="0">(0) 7:10 - 7:55</option>
+                                    <option value="1">(1) 8:00 - 8:45</option>
+                                    <option value="2">(2) 8:50 - 9:35</option>
+                                    <option value="3">(3) 9:40 - 10:25</option>
+                                    <option value="4">(4) 10:35 - 11:20</option>
+                                    <option value="5">(5) 11:30 - 12:15</option>
+                                    <option value="6">(6) 12:35 - 13:20</option>
+                                    <option value="7">(7) 13:35 - 14:20</option>
+                                    <option value="8">(8) 14:25 - 15:10</option>
+                                    <option value="9">(9) 15:15 - 16:00</option>
+                                    <option value="10">(10) 16:05 - 16:50</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="date-inp" class="form-label">Data</label>
+                                <input type="date" class="form-control" id="date-inp" placeholder="">
+                            </div>
+                            <div>
+                                <label for="building-sel" class="form-label">Budynek</label>
+                                <select id="building-sel" class="form-select" aria-label="Default select example">
+                                    <option value="none" selected>Wybierz Budynek</option>
+                                    <option value="1">ul. Szanajcy 5</option>
+                                    <option value="2">ul. Szanajcy 17/19</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="classroom-inp" class="form-label">Sala</label>
+                                <input type="text" class="form-control" id="classroom-inp" placeholder="">
+                            </div>
+                            <div>
+                                <label for="max-members-inp" class="form-label">Maksymalna Ilość Członków</label>
+                                <input type="number" class="form-control" id="max-members-inp" placeholder="" min="1">
+                            </div>
+                            <div>
+                                <label for="description-inp" class="form-label">Opis</label>
+                                <textarea class="form-control" id="description-inp" rows="3"></textarea>
+                            </div>
+                            <div class="d-flex flex-column flex-lg-row align-items-lg-center gap-2 gap-lg-5">
+                                <button id="create-btn" class="btn btn-success w-100" type="button">Utwórz konsultację</button>
+                                <button class="btn btn-danger w-100" type="button" data-bs-dismiss="modal">Anuluj</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="consultation-enrolled-studentsModal" data-bs-keyboard="false" tabindex="-1" aria-labelledby="consultation-enrolled-studentsModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="consultation-enrolled-studentsModalLabel">Zapisani do konsultacji</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <ol id="members-list" class="enrolled-students-list">
+                            <li>Uczeń</li>
+                            <li>Uczeń</li>
+                            <li>Uczeń</li>
+                            <li>Uczeń</li>
+                            <li>Uczeń</li>
+                            <li>Uczeń</li>
+                        </ol>
+                        <div class="d-flex flex-column flex-lg-row align-items-lg-center gap-2 gap-lg-5">
+                            <button id="generate-members-list-btn" class="btn btn-success w-100" type="button">Wygeneruj Listę Obecności</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SCRIPT INCLUDE -->
+
+        <%- include('partials/scripts.ejs') %>
+
+        <script src="/panel/javascript/index/main.js"></script>
+        <script src="/javascript/calendar.js"></script>
+    </body>
+</html>

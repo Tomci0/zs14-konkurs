@@ -1,0 +1,121 @@
+<!DOCTYPE HTML>
+<html lang="pl-PL" data-bs-theme="light">
+    <head>
+        <%- include('partials/head.ejs') %>
+    </head>
+    <body>        
+
+        <%- include('partials/sidebar.ejs') %>
+
+        <div class="main-page">
+            
+            <%- include('partials/navbar.ejs', {
+                userData
+            }) %>
+
+            <div id="main">
+                <div class="container">
+                    <div class="row mb-5">
+                        <div class="col">
+                            <div class="page-title">
+                                <span class="title">Szczegóły konsultacji</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-lg-6 mb-3">
+                            <div class="page-element">
+                                <div class="header">
+                                    <span>Zapisani uczniowie</span>
+                                </div>
+                                <div class="element-content">
+                                    <div class="table-responsive">
+                                        <table class="table table-striped table-borderless mb-0 align-middle">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">Lp.</th>
+                                                    <th scope="col" width="30%">Imię i Nazwisko</th>
+                                                    <th scope="col">W celu</th>
+                                                    <th scope="col" class="text-end"></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th>1</th>
+                                                    <td>Uczeń</td>
+                                                    <td>Lorem ipsum dolor sit amet consectetur adipisicing elit.</td>
+                                                    <td class="text-end"><span class="badge bg-success">Obecny</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>2</th>
+                                                    <td>Uczeń</td>
+                                                    <td>Lorem ipsum dolor sit amet consectetur adipisicing elit.</td>
+                                                    <td class="text-end"><span class="badge bg-danger">Nieobecny</span></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <div class="ps-5 pe-5 mt-3 mb-3">
+                                            <button class="btn btn-secondary w-100" type="button">Pobierz listę obecności</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6 mb-3">
+                            <div class="page-element">
+                                <div class="header">
+                                    <span>Lista obecności</span>
+                                </div>
+                                <div class="element-content">
+                                    <div class="table-responsive">
+                                        <table class="table table-striped table-borderless mb-0 align-middle">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">Lp.</th>
+                                                    <th scope="col">Imię i Nazwisko</th>
+                                                    <th scope="col"></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th>1</th>
+                                                    <td>Uczeń</td>
+                                                    <td>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                                            <label class="form-check-label" for="flexCheckDefault">
+                                                                Obecny
+                                                            </label>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th>2</th>
+                                                    <td>Uczeń</td>
+                                                    <td>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                                            <label class="form-check-label" for="flexCheckDefault">
+                                                                Obecny
+                                                            </label>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <div class="ps-5 pe-5 mt-3 mb-3">
+                                            <button class="btn btn-success w-100" type="button">Zapisz obecność</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <%- include('../partials/footer.ejs') %>
+        </div>
+
+        <%- include('partials/scripts.ejs') %>
+    </body>
+</html>

@@ -1,0 +1,74 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/"><img src="images/logo-solo.png"></a>
+        <% if (!userData) { %>
+            <button class="google-login-btn ms-auto d-lg-none" type="button">
+                <img src="images/google.png">
+                <span class="title">Logowanie</span>
+            </button>
+        <% } %>
+        <button class="btn toggle-theme-btn d-lg-none changeColorMode <% if (userData) { %>ms-auto<% } %>" type="button">
+            <span class="iconify icon" data-icon="bi:moon-fill"></span>
+        </button>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav align-items-center ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" data-page="index" aria-current="page" href="/">Strona główna</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="https://zs14.pl" target="_blank">ZS14.PL</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-page="consultations" href="/consultations">Konsultacje</a>
+                </li>
+                <!-- WIDOCZNE PO ZALOGOWANIU -->
+                <% if (userData) { %> 
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="offcanvas" href="#my-consultations" role="button" aria-controls="my-consultations">Moje konsultacje</a>
+                    </li>
+                <% } %>
+                <li class="nav-item d-none d-lg-block">
+                    <button class="btn toggle-theme-btn changeColorMode" type="button">
+                        <span class="iconify icon" data-icon="bi:moon-fill"></span>
+                    </button>
+                </li>
+                <div class="vr me-3 ms-3 d-none d-lg-block"></div>
+
+                <% if (userData) { %>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            <div class="d-flex align-items-center gap-1">
+                                <div class="user-image">
+                                    <img src="<%= userData.avatar %>">
+                                </div>
+                                <span class="logged-email dropdown-toggle"><%= userData.name %></span>
+                            </div>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <% if (userData.isTeacher) { %>
+                                <li><a class="dropdown-item" href="/panel">Przejdź do panelu</a></li>
+                            <% } %>
+                            <li><a class="dropdown-item" href="/auth/logout">Wyloguj się</a></li>
+                        </ul>
+                    </li>
+                <% } else { %>
+                    <li class="nav-item">
+                        <button class="google-login-btn d-none d-lg-block" type="button">
+                            <img src="images/google.png">
+                            <span class="title">Zaloguj się przez Google</span>
+                        </button>
+                    </li>
+                <% } %>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<script>
+    const userId = '<%= userData._id %>';
+</script>

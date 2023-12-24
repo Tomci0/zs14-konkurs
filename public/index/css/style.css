@@ -1,0 +1,394 @@
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: #f8f8f8;
+    font-family: 'Rubik', sans-serif;
+    font-style: normal;
+    font-size: 13px;
+    color: #191919;
+    min-height: 100vh;
+    position: relative;
+}
+body::after {
+    content: "";
+    background: url(/images/bg.jpg);
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    opacity: 0.3;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;   
+  }
+
+/* ============= DEFAULT ============= */
+
+.notification {
+    z-index: 9999999;
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    font-size: 13px;
+    border-radius: 10px;
+    padding: 10px;
+    color: #fff;
+}
+.notification.success {
+    background-color: #3b933f;
+}
+.notification.error {
+    background-color: #ff0000;
+}
+.notification.warning {
+    background-color: #d8d402;
+}
+.notification.info {
+    background-color: #00a2ff;
+}
+.notification .icon {
+    font-size: 20px;
+}
+
+.filter-btn {
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    transition: .3s;
+}
+.filter-btn .icon {
+    color: #191919;
+    font-size: 16px;
+}
+
+.btn {
+    border: none;
+    box-shadow: none;
+}
+.btn:focus {
+    border: none;
+    box-shadow: none;
+}
+
+.google-login-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: transparent;
+    box-shadow: none;
+    border: 1px solid rgba(19,19,19,0.2);
+    padding: 5px 10px;
+    transition: .3s ease-in-out;
+}
+.google-login-btn:hover {
+    background-color: #f8f8f8;
+}
+.google-login-btn img {
+    width: 20px;
+    height: auto;
+}
+
+.toggle-theme-btn {
+    padding: .5rem;
+}
+.toggle-theme-btn .icon {
+    font-size: 20px;
+    color: rgba(19,19,19,0.6);
+    transition: .3s ease-in-out;
+}
+.toggle-theme-btn .icon:hover {
+    font-size: 20px;
+    color: #191919;
+}
+.navbar-toggler {
+    font-size: 11px;
+}
+
+.user-image {
+    position: relative;
+    background-color: #3b933f;
+    border-radius: 100%;
+    width: 32px;
+    height: 32px;
+    margin-right: 5px;
+}
+
+.user-image img {
+    border-radius: 100%;
+    width: 100%;
+    height: auto;
+}
+
+.details-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: space-between;
+}
+.details-item .title {
+    font-weight: 600;
+}
+
+.table .table-header {
+    --bs-table-color: #fff;
+    --bs-table-bg: #3b933f;
+    --bs-table-border-color: #3b933f;
+    --bs-table-striped-bg: #c7dbd2;
+    --bs-table-striped-color: #000;
+    --bs-table-active-bg: #bcd0c7;
+    --bs-table-active-color: #000;
+    --bs-table-hover-bg: #c1d6cc;
+    --bs-table-hover-color: #000;
+    color: var(--bs-table-color);
+    border-color: var(--bs-table-border-color);
+}
+
+.month-selection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 5px 10px;
+}
+.month-selection .next,
+.month-selection .prev {
+    background-color: transparent;
+    border: none;
+    font-size: 26px;
+    color: #3b933f;
+}
+
+/* =================================== */
+
+.navbar {
+    background-color: #fff !important;
+    box-shadow: 0 0 20px rgba(19,19,19,0.3);
+}
+.navbar .navbar-brand img {
+    width: 48px;
+    height: auto;
+}
+.navbar .navbar-brand .title {
+    font-weight: 700;
+    font-size: 18px;
+}
+.navbar .nav-link {
+    text-transform: uppercase;
+}
+.navbar .nav-link.active {
+    font-weight: 600;
+}
+.navbar .nav-link .logged-email {
+    text-transform: none;
+}
+
+#main {
+    padding: 60px 0;
+}
+#main.home-page {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+}
+#main.home-page .home-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+#main.home-page .home-logo span {
+    font-size: 36px;
+    font-weight: 800;
+}
+#main.home-page .home-text {
+    font-size: 18px;
+}
+
+#main .page-element {
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(19,19,19,0.3);
+}
+#main .page-element .header {
+    background-color: #3b933f;
+    padding: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+}
+#main .page-element .element-content {
+    padding: 5px;
+}
+
+#calendar tbody tr td {
+    width: 14.285714285714285714285714285714%;
+}
+
+#calendar .day-month {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 25px;
+}
+#calendar .day-month span {
+    font-size: 14px;
+}
+#calendar .day-month .day {
+    position: absolute;
+    border-radius: 100%;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+}
+#calendar .day-month .day.active {
+    background-color: #3b933f;
+    color: #fff;
+}
+#calendar .plate-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 11px;
+}
+#calendar .plate-list .plate {
+    display: flex;
+    flex-direction: column;
+    border-left: solid 4px transparent;
+    padding: 5px 10px;
+    line-height: 12px;
+    cursor: pointer;
+}
+#calendar .plate-list .plate.my-consultation {
+    background-color: rgba(0,0,0,0.1);
+}
+#calendar .plate-list .plate .time {
+    font-weight: 600;
+}
+#calendar .plate-list .plate.green {
+    border-color: #3b933f;
+}
+#calendar .plate-list .plate.yellow {
+    border-color: #d8d402;
+}
+#calendar .plate-list .plate.red {
+    border-color: #ff0000;
+}
+#calendar .plate-list .plate.blue {
+    border-color: #00a2ff;
+}
+#calendar .plate-list .plate.purple {
+    border-color: #a200ff;
+}
+#calendar .plate-list .plate.turquoise {
+    border-color: #497E76;
+}
+#calendar .plate-list .plate.orange {
+    border-color: #FFA500;
+}
+#calendar .plate-list .plate.brown {
+    border-color: #A52A2A;
+}
+#calendar .plate-list .plate.pink {
+    border-color: #FFC0CB;
+}
+#calendar .plate-list .plate.sea-blue {
+    border-color: #256D7B;
+}
+
+#footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8f8f8;
+    box-shadow: 0 0 20px rgba(19,19,19,0.3);
+    padding: 20px 5px;
+    margin-top: auto;
+    text-align: center;
+}
+
+#my-consultations-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+#my-consultations-list .my-consultation-item {
+    border: none;
+    box-shadow: none;
+    width: 100%;
+    padding: 10px;
+    color: #191919;
+    text-align: start;
+}
+
+
+
+#consultation-previewModal .modal-header {
+    background: url('https://cdn1.epicgames.com/ue/product/Screenshot/345643643564364-1920x1080-77f42110b4f0ada5aa16421711360935.jpg?resize=1&w=1920');
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-position: center center;
+    /* background-attachment: fixed; */
+    height: 100px;
+}
+#consultation-previewModal .modal-header .btn-close {
+    --bs-btn-close-color: #fff;
+    --bs-btn-close-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/%3e%3c/svg%3e");
+}
+#consultation-previewModal .modal-header .modal-title {
+    color: #fff;
+    font-weight: 600;
+    font-size: 24px !important;
+    text-shadow: 0 0 5px #000;
+}
+
+
+/* DARK THEME */
+[data-bs-theme="dark"] body {
+    background-color: #191919 !important;
+    color: #ccc;
+}
+[data-bs-theme="dark"] .navbar {
+    background-color: #252525 !important;
+}
+[data-bs-theme="dark"] .vr {
+    background-color: #fff !important;
+}
+[data-bs-theme="dark"] .google-login-btn {
+    border: 1px solid rgba(255,255,255,0.2);
+}
+[data-bs-theme="dark"] .google-login-btn:hover {
+    background-color: #191919;
+}
+[data-bs-theme="dark"] .toggle-theme-btn .icon {
+    color: rgba(255,255,255,0.6) !important;
+}
+[data-bs-theme="dark"] .toggle-theme-btn .icon:hover {
+    color: #ccc !important;
+}
+[data-bs-theme="dark"] .page-element {
+    background-color: #252525 !important;
+}
+[data-bs-theme="dark"] #footer {
+    background-color: #252525 !important;
+}
+[data-bs-theme="dark"] .table {
+    --bs-body-color: #dee2e6;
+    --bs-body-bg: transparent;
+    --bs-emphasis-color: #fff;
+}
+[data-bs-theme="dark"] #consultation-previewModal .modal-header .btn-close {
+    --bs-btn-close-color: #fff;
+    /* --bs-btn-close-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/%3e%3c/svg%3e") !important; */
+}
+[data-bs-theme="dark"] .filter-btn .icon {
+    color: #ccc;
+}
+

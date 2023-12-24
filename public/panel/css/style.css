@@ -1,0 +1,457 @@
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: #f8f8f8;
+    font-family: 'Rubik', sans-serif;
+    font-style: normal;
+    font-size: 14px;
+    color: #191919;
+    min-height: 100vh;
+}
+
+/* ============= DEFAULT ============= */
+
+
+.filter-btn {
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    transition: .3s;
+}
+.filter-btn .icon {
+    color: #191919;
+    font-size: 16px;
+}
+
+.btn {
+    border: none;
+    box-shadow: none;
+}
+.btn:focus {
+    border: none;
+    box-shadow: none;
+}
+.add-btn {
+    position: relative;
+    background-color: #3b933f;
+    border-radius: 100%;
+    border: none;
+    width: 40px;
+    height: 40px;
+    transition: 0.1s ease-in-out;
+}
+.add-btn .icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+    color: #fff;
+}
+.add-btn:hover {
+    background-color: #51c557;
+}
+
+.toggle-theme-btn {
+    padding: .5rem;
+}
+.toggle-theme-btn .icon {
+    font-size: 20px;
+    color: rgba(19,19,19,0.6);
+    transition: .3s ease-in-out;
+}
+.toggle-theme-btn .icon:hover {
+    font-size: 20px;
+    color: #191919;
+}
+.navbar-toggler {
+    font-size: 11px;
+}
+
+.user-image {
+    position: relative;
+    background-color: #3b933f;
+    border-radius: 100%;
+    width: 32px;
+    height: 32px;
+    margin-right: 5px;
+}
+.user-image img {
+    border-radius: 100%;
+    width: 100%;
+    height: auto;
+}
+
+.details-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: space-between;
+}
+.details-item .title {
+    font-weight: 600;
+}
+
+.table .table-header {
+    --bs-table-color: #fff;
+    --bs-table-bg: #3b933f;
+    --bs-table-border-color: #3b933f;
+    --bs-table-striped-bg: #c7dbd2;
+    --bs-table-striped-color: #000;
+    --bs-table-active-bg: #bcd0c7;
+    --bs-table-active-color: #000;
+    --bs-table-hover-bg: #c1d6cc;
+    --bs-table-hover-color: #000;
+    color: var(--bs-table-color);
+    border-color: var(--bs-table-border-color);
+}
+
+.notification {
+    z-index: 9999999;
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    border-radius: 10px;
+    padding: 10px;
+    color: #fff;
+}
+.notification.success {
+    background-color: #3b933f;
+}
+.notification.error {
+    background-color: #ff0000;
+}
+.notification.warning {
+    background-color: #d8d402;
+}
+.notification.info {
+    background-color: #00a2ff;
+}
+.notification .icon {
+    font-size: 20px;
+}
+
+ol.enrolled-students-list {
+    list-style: none;
+    counter-reset: custom-counter;
+}
+
+.enrolled-students-list li::before {
+    content: counter(custom-counter);
+    counter-increment: custom-counter;
+    font-weight: bold;
+    margin-right: 0.5em;
+}
+
+/* =================================== */
+
+#sidebar {
+    z-index: 999;
+    background-color: #3b933f;
+    position: absolute;
+    width: 150px;
+    height: 100%;
+    color: #ccc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: 0.3s ease-in-out;
+}
+#sidebar.toggle {
+    margin-left: -150px;
+    transition: 0.3s ease-in-out;
+}
+#sidebar .logo {
+    padding: 20px 0;
+}
+#sidebar .menu {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0 5px;
+}
+#sidebar .menu .menu-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    opacity: .6;
+    transition: .3s;
+}
+#sidebar .menu .menu-btn:hover {
+    opacity: 1;
+}
+#sidebar .menu .menu-btn.active {
+    opacity: 1;
+}
+#sidebar .menu .menu-btn .icon {
+    font-size: 34px;
+}
+
+.main-page {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin-left: 150px;
+    transition: 0.3s ease-in-out;
+}
+.main-page.toggle {
+    margin-left: 0;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    background-color: #fff !important;
+    box-shadow: 0 0 20px rgba(19,19,19,0.3);
+}
+.navbar .sidebar-toggle-btn {
+    background-color: #3b933f;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+}
+.navbar .navbar-brand img {
+    width: 48px;
+    height: auto;
+}
+.navbar .navbar-brand .title {
+    font-weight: 700;
+    font-size: 18px;
+}
+.navbar .nav-link {
+    text-transform: uppercase;
+}
+.navbar .nav-link .logged-email {
+    text-transform: none;
+}
+
+#main {
+    padding: 60px 0;
+}
+#main .page-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: space-between;
+}
+#main .page-title .title {
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #7a7a7a;
+}
+
+#main .page-element {
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(19,19,19,0.3);
+}
+#main .page-element .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #3b933f;
+    padding: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+}
+#main .page-element .element-content {
+    padding: 5px;
+}
+
+#calendar tbody tr td {
+    width: 14.285714285714285714285714285714%;
+}
+
+#calendar .day-month {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 25px;
+}
+#calendar .day-month span {
+    font-size: 14px;
+}
+#calendar .day-month .day {
+    position: absolute;
+    border-radius: 100%;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+}
+#calendar .day-month .day.active {
+    background-color: #3b933f;
+    color: #fff;
+}
+#calendar .plate-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 11px;
+}
+#calendar .plate-list .plate {
+    display: flex;
+    flex-direction: column;
+    border-left: solid 4px transparent;
+    padding: 5px 10px;
+    line-height: 12px;
+    cursor: pointer;
+}
+#calendar .plate-list .plate.my-consultation {
+    background-color: rgba(0,0,0,0.1);
+}
+#calendar .plate-list .plate .time {
+    font-weight: 600;
+}
+#calendar .plate-list .plate.green {
+    border-color: #3b933f;
+}
+#calendar .plate-list .plate.yellow {
+    border-color: #d8d402;
+}
+#calendar .plate-list .plate.red {
+    border-color: #ff0000;
+}
+#calendar .plate-list .plate.blue {
+    border-color: #00a2ff;
+}
+#calendar .plate-list .plate.purple {
+    border-color: #a200ff;
+}
+#calendar .plate-list .plate.turquoise {
+    border-color: #497E76;
+}
+#calendar .plate-list .plate.orange {
+    border-color: #FFA500;
+}
+#calendar .plate-list .plate.brown {
+    border-color: #A52A2A;
+}
+#calendar .plate-list .plate.pink {
+    border-color: #FFC0CB;
+}
+#calendar .plate-list .plate.sea-blue {
+    border-color: #256D7B;
+}
+
+
+
+#consultation-enrolled-studentsModal .modal-header,
+#consultation-createModal .modal-header,
+#consultation-editModal .modal-header,
+#consultation-previewModal .modal-header {
+    background: url('https://cdn1.epicgames.com/ue/product/Screenshot/345643643564364-1920x1080-77f42110b4f0ada5aa16421711360935.jpg?resize=1&w=1920');
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-position: center center;
+    /* background-attachment: fixed; */
+    height: 100px;
+}
+#consultation-enrolled-studentsModal .modal-header .btn-close,
+#consultation-createModal .modal-header .btn-close,
+#consultation-editModal .modal-header .btn-close,
+#consultation-previewModal .modal-header .btn-close {
+    --bs-btn-close-color: #fff;
+    --bs-btn-close-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/%3e%3c/svg%3e");
+}
+#consultation-enrolled-studentsModal .modal-header .modal-title,
+#consultation-createModal .modal-header .modal-title,
+#consultation-editModal .modal-header .modal-title,
+#consultation-previewModal .modal-header .modal-title {
+    color: #fff;
+    font-weight: 600;
+    font-size: 24px !important;
+    text-shadow: 0 0 5px #000;
+}
+
+
+
+#footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8f8f8;
+    box-shadow: 0 0 20px rgba(19,19,19,0.3);
+    padding: 20px 5px;
+    margin-top: auto;
+    text-align: center;
+}
+
+
+/* DARK THEME */
+[data-bs-theme="dark"] body {
+    background-color: #191919 !important;
+    color: #ccc;
+}
+[data-bs-theme="dark"] .navbar {
+    background-color: #252525 !important;
+}
+[data-bs-theme="dark"] .vr {
+    background-color: #fff !important;
+}
+[data-bs-theme="dark"] .toggle-theme-btn .icon {
+    color: rgba(255,255,255,0.6) !important;
+}
+[data-bs-theme="dark"] .toggle-theme-btn .icon:hover {
+    color: #ccc !important;
+}
+[data-bs-theme="dark"] .page-element {
+    background-color: #252525 !important;
+}
+[data-bs-theme="dark"] .table {
+    --bs-body-color: #dee2e6;
+    --bs-body-bg: transparent;
+    --bs-emphasis-color: #fff;
+}
+[data-bs-theme="dark"] #footer {
+    background-color: #252525 !important;
+}
+[data-bs-theme="dark"] #calendar .plate-list .plate.my-consultation {
+    background-color: rgba(255,255,255,0.1);
+}
+
+@media (max-width: 991.98px) {
+    #sidebar {
+        margin-left: -300px;
+    }
+    #sidebar.toggle {
+        margin-left: 0;
+    }
+    .main-page {
+        margin-left: 0;
+    }
+    #sidebar-toggle {
+        margin-left: 0;
+    }
+    #sidebar-toggle.toggle {
+        margin-left: 150px;
+    }
+}
+
+.month-selection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 5px 10px;
+}
+.month-selection .next,
+.month-selection .prev {
+    background-color: transparent;
+    border: none;
+    font-size: 26px;
+    color: #3b933f;
+}
+[data-bs-theme="dark"] .filter-btn .icon {
+    color: #ccc;
+}

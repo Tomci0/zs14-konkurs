@@ -1,0 +1,43 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+        <button id="sidebar-toggle" class="sidebar-toggle-btn" type="button">
+            <span class="iconify icon" data-icon="fa6-solid:bars"></span>
+        </button>
+        <button class="btn toggle-theme-btn ms-auto d-lg-none changeColorMode" type="button">
+            <span class="iconify icon" data-icon="bi:moon-stars-fill"></span>
+        </button>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav align-items-center ms-auto mb-2 mb-lg-0">
+                <li class="nav-item d-none d-lg-block">
+                    <button class="btn toggle-theme-btn changeColorMode" type="button">
+                        <span class="iconify icon" data-icon="bi:moon-stars-fill"></span>
+                    </button>
+                </li>
+                <div class="vr me-3 ms-3 d-none d-lg-block"></div>
+                <li class="nav-item dropdown">
+                    <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        <div class="d-flex align-items-center">
+                            <div class="user-image">
+                                <img src="<%= userData.avatar %>">
+                            </div>
+                            <span class="logged-email dropdown-toggle"><%= userData.name %></span>
+                        </div>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="/">Opuść panel</a></li>
+                        <li><a class="dropdown-item" href="#">Wyloguj się</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<script>
+    const userId = '<%= userData._id %>';
+</script>
